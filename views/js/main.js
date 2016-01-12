@@ -452,11 +452,9 @@ var resizePizzas = function(size) {
   function changePizzaSizes(size) {
     // No need to query the dom in each loop
     var randomPizzaContainers = document.getElementsByClassName("randomPizzaContainer");
-    var dx = 0;
-    var newwidth="";
+    var dx = determineDx(randomPizzaContainers[0], size);
+    var newwidth= (randomPizzaContainers[0].offsetWidth + dx) + 'px';
     for (var i = 0; i < randomPizzaContainers.length; i++) {
-      dx = determineDx(randomPizzaContainers[i], size);
-      newwidth= (randomPizzaContainers[i].offsetWidth + dx) + 'px';
       randomPizzaContainers[i].style.width = newwidth;
     }
   }
@@ -537,8 +535,10 @@ document.addEventListener('DOMContentLoaded', function() {
   // There is no need to add so many pizzas.
   var height = window.screen.height;
   var rows = height / s;
-  for (var i = 0; i < rows; i++) {
-    var elem = document.createElement('img');
+  var pizzas = height * cols;
+  var elem;
+  for (var i = 0; i < pizzas; i++) {
+    elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
