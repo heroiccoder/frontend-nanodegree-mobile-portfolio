@@ -535,7 +535,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // There is no need to add so many pizzas.
   var height = window.screen.height;
   var rows = height / s;
-  var pizzas = height * cols;
+  var pizzas = rows * cols;
   var elem;
   for (var i = 0; i < pizzas; i++) {
     elem = document.createElement('img');
