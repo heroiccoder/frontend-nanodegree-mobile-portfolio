@@ -3,7 +3,7 @@
 How to run the application
 --------------------------
 
-In order to run the first part of the project open index.html with a javascript capable browser. For the second part of the project open views/pizza.html
+In order to run the first part of the project open dist/index.html with a javascript capable browser. For the second part of the project open views/pizza.html (do not open dist/views/pizza.html that one is there only to keep the link valid).
 
 Optimizations - First Part
 --------------------------
@@ -13,6 +13,8 @@ To optimize index.html I used google pagespeed insights and pagespeed on chrome 
 Using chrome developer tools I got optimized versions of my images. I also used GIMP to scale the pizza image used on the website because the browser was loading a much bigger picture than necessary. 
 
 I minified css and js. I re ordered the scripts so as to minimize the critical rendering path. I also included width and height on the images per pagespeed suggestion.
+
+Finally, per reviewer suggestion, I created a grunt task to automate minifying, replacing the css/js files with their minified version and copying everything to a dist folder. HTML is also minified and automatically corrected to use production version of css/js files.
 
 Optimizations - Second Part
 
