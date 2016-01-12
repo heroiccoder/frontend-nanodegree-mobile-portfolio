@@ -5,6 +5,10 @@ How to run the application
 
 In order to run the first part of the project open dist/index.html with a javascript capable browser. For the second part of the project open views/pizza.html (do not open dist/views/pizza.html that one is there only to keep the link valid).
 
+Run grunt task
+--------------
+To run grunt tasks you can just "grunt" in the main directory. You should have all dependencies installed! Remember they are listed in package.json
+
 Optimizations - First Part
 --------------------------
 
